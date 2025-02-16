@@ -1,0 +1,507 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="mini_fixedwing_04">
+    <pose>0 0 0.15 0 0 0</pose>
+    <link name='fuselage'>
+      <inertial>
+        <pose>0.1 0 0.01578</pose>
+        <mass>0.280</mass>
+        <inertia>
+          <ixx>1e-2</ixx>
+          <iyy>1e-2</iyy>
+          <izz>1e-2</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/fuselage.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/fuselage.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.678 0.529 0.384 1</ambient>
+          <diffuse>0.678 0.529 0.384 1</diffuse>
+          <specular>0.678 0.529 0.384 1</specular>
+        </material>
+      </visual>
+      <visual name='cp_vtail_left'>
+        <pose>-0.03 0.15 0.05 -1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_vtail_right'>
+        <pose>-0.03 -0.15 0.05 1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_wing_left'>
+        <pose>-0.01 0.175 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_wing_right'>
+        <pose>-0.01 -0.175 0.027 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+    <link name='elevon_left'>
+      <inertial>
+        <pose>-0.148 0.17 0.01 0 0 0.785</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.84e-5</ixx>
+          <iyy>1.67e-5</iyy>
+          <izz>3.49e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/aileron_left.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='elevon_left_joint' type='revolute'>
+      <pose>-0.125 0.17 0.007 0 0 0.785</pose>
+      <parent>fuselage</parent>
+      <child>elevon_left</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.28</lower>
+          <upper>0.28</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='elevon_right'>
+      <inertial>
+        <pose>-0.148 -0.17 0.01 0 0 -0.785.</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.84e-5</ixx>
+          <iyy>1.67e-5</iyy>
+          <izz>3.49e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/aileron_right.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='elevon_right_joint' type='revolute'>
+      <pose>-0.125 -0.17 0.007 0 0 -0.785</pose>
+      <parent>fuselage</parent>
+      <child>elevon_right</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.28</lower>
+          <upper>0.28</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='propeller_left'>
+      <inertial>
+        <pose>0.177 0.13 0.03 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <iyy>1e-6</iyy>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/propeller_left.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='propeller_left_joint' type='revolute'>
+      <pose>0.177 0.13 0.03 0 0 0</pose>
+      <parent>fuselage</parent>
+      <child>propeller_left</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <link name='propeller_right'>
+      <inertial>
+        <pose>0.177 -0.13 0.03 0 0 0</pose>
+        <mass>0.002</mass>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <iyy>1e-6</iyy>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_04/meshes/stl/propeller_right.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='propeller_right_joint' type='revolute'>
+      <pose>0.177 -0.13 0.03 0 0 0</pose>
+      <parent>fuselage</parent>
+      <child>propeller_right</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <plugin name="vtail_left" filename="libLiftDragPlugin2.so">
+      <pose>-0.03 0.15 0.05 -1.57 0 0</pose>
+      <cL0>0</cL0>
+      <cLa>4.75</cLa>
+      <cm0>0</cm0>
+      <cma>0</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.34</alpha_stall>
+      <cLa_stall>-3.85</cLa_stall>
+      <cma_stall>0</cma_stall>
+      <area>0.025</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+    </plugin>
+
+    <plugin name="vtail_right" filename="libLiftDragPlugin2.so">
+      <pose>-0.03 -0.15 0.05 1.57 0 0</pose>
+      <cL0>0</cL0>
+      <cLa>4.75</cLa>
+      <cm0>0</cm0>
+      <cma>0</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.34</alpha_stall>
+      <cLa_stall>-3.85</cLa_stall>
+      <cma_stall>0</cma_stall>
+      <area>0.025</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+    </plugin>
+
+    <plugin name="wing_left" filename="libLiftDragPlugin2.so">
+      <pose>-0.01 0.175 0.027 0 0 0</pose>
+      <cL0>0.2</cL0>
+      <cLa>2.5926</cLa>
+      <!--Check cm0-->
+      <cm0>-0.01</cm0>
+      <cma>0</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.248</alpha_stall>
+      <cLa_stall>-1.146</cLa_stall>
+      <cma_stall>-0.458</cma_stall>
+      <area>0.076</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>elevon_left_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+      <verbose>0</verbose>
+    </plugin>
+
+    <plugin name="wing_right" filename="libLiftDragPlugin2.so">
+      <pose>-0.01 -0.175 0.027 0 0 0</pose>
+      <cL0>0.2</cL0>
+      <cLa>2.5926</cLa>
+      <!--Check cm0-->
+      <cm0>-0.01</cm0>
+      <cma>0</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.248</alpha_stall>
+      <cLa_stall>-1.146</cLa_stall>
+      <cma_stall>-0.458</cma_stall>
+      <area>0.076</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>elevon_right_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+      <verbose>0</verbose>
+    </plugin>
+
+    <!--Start PX4 autopilot-->
+
+    <link name='imu_link'>
+      <pose>0.1 0 0.01578</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <iyy>1e-05</iyy>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <joint name='imu_joint' type='revolute'>
+      <child>imu_link</child>
+      <parent>fuselage</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>imu_link</linkName>
+      <imuTopic>/imu</imuTopic>
+      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+    </plugin>
+
+    <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
+        <robotNamespace></robotNamespace>
+        <gpsNoise>true</gpsNoise>
+    </plugin>
+
+    <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>100</pubRate>
+      <noiseDensity>0.0004</noiseDensity>
+      <randomWalk>6.4e-06</randomWalk>
+      <biasCorrelationTime>600</biasCorrelationTime>
+      <magTopic>/mag</magTopic>
+    </plugin>
+
+    <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>50</pubRate>
+      <baroTopic>/baro</baroTopic>
+    </plugin>
+
+    <plugin name='left_motor_plugin' filename='libMotorPlugin.so'>
+      <gztopic>/throttle_left</gztopic>
+      <joint_name>propeller_left_joint</joint_name>
+      <prop_name>propeller_left</prop_name>
+      <diameter>4</diameter>
+      <ct>0.1269	-0.0475	-0.7376	1.5233	-1.2744</ct>
+      <cp>0.0582	-0.0004664	-0.291	0.6379	-0.5772</cp>
+      <kV>7000</kV>
+      <i0>1.15</i0>
+      <iMax>30</iMax>
+      <r0>0.105</r0>
+      <battV>7.4</battV>
+      <capacity>475</capacity>
+      <axis_num>0</axis_num>
+      <!--Design thrust assumes very high motor eff.-->
+      <motor_eff>0.9</motor_eff>
+      <reverse>1</reverse>
+      <verbose>1</verbose>
+    </plugin>
+
+    <plugin name='right_motor_plugin' filename='libMotorPlugin.so'>
+      <gztopic>/throttle_right</gztopic>
+      <joint_name>propeller_right_joint</joint_name>
+      <prop_name>propeller_right</prop_name>
+      <diameter>4</diameter>
+      <ct>0.1269	-0.0475	-0.7376	1.5233	-1.2744</ct>
+      <cp>0.0582	-0.0004664	-0.291	0.6379	-0.5772</cp>
+      <kV>7000</kV>
+      <i0>1.15</i0>
+      <iMax>30</iMax>
+      <r0>0.105</r0>
+      <battV>7.4</battV>
+      <capacity>475</capacity>
+      <axis_num>0</axis_num>
+      <!--Design thrust assumes very high motor eff.-->
+      <motor_eff>0.9</motor_eff>
+      <verbose>1</verbose>
+    </plugin>
+
+    <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
+      <robotNamespace></robotNamespace>
+      <imuSubTopic>/imu</imuSubTopic>
+      <gpsSubTopic>/gps</gpsSubTopic>
+      <magSubTopic>/mag</magSubTopic>
+      <baroSubTopic>/baro</baroSubTopic>
+      <mavlink_addr>INADDR_ANY</mavlink_addr>
+      <mavlink_udp_port>14560</mavlink_udp_port>
+      <serialEnabled>false</serialEnabled>
+      <serialDevice>/dev/ttyACM0</serialDevice>
+      <baudRate>921600</baudRate>
+      <qgc_addr>INADDR_ANY</qgc_addr>
+      <qgc_udp_port>14550</qgc_udp_port>
+      <sdk_addr>INADDR_ANY</sdk_addr>
+      <sdk_udp_port>14540</sdk_udp_port>
+      <hil_mode>false</hil_mode>
+      <hil_state_level>false</hil_state_level>
+      <enable_lockstep>true</enable_lockstep>
+      <use_tcp>true</use_tcp>
+      <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+      <control_channels>
+        <channel name="left_prop">
+          <input_index>0</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1.0</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0.05</zero_position_armed>
+          <joint_control_type>position_gztopic</joint_control_type>
+          <gztopic>/throttle_left</gztopic>
+          <joint_name>propeller_left_joint</joint_name>
+        </channel>
+        <channel name="right_prop">
+          <input_index>1</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>1.0</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0.05</zero_position_armed>
+          <joint_control_type>position_gztopic</joint_control_type>
+          <gztopic>/throttle_right</gztopic>
+          <joint_name>propeller_right_joint</joint_name>
+        </channel>
+        <channel name="elevon_left">
+          <input_index>2</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>-0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>-0.05</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>elevon_left_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name="elevon_right">
+          <input_index>3</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>-0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>-0.05</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>elevon_right_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+      </control_channels>
+
+    </plugin>
+  </model>
+
+</sdf>
+
+<!-- vim: set et fenc=utf-8 ft=xml ff=unix sts=0 sw=2 ts=2 : -->
