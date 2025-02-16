@@ -1,0 +1,712 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name="mini_fixedwing_10">
+    <pose>0 0 0.15 0 0 0</pose>
+    <link name='fuselage'>
+      <inertial>
+        <pose>-0.144 0 -0.02 0 0 0</pose>
+        <mass>0.194</mass>
+        <inertia>
+          <ixx>3e-3</ixx>
+          <iyy>2e-3</iyy>
+          <izz>5e-3</izz>
+        </inertia>
+      </inertial>
+      <collision name='collision'>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/fuselage.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='visual'>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/fuselage.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.678 0.529 0.384 1</ambient>
+          <diffuse>0.678 0.529 0.384 1</diffuse>
+          <specular>0.678 0.529 0.384 1</specular>
+        </material>
+      </visual>
+
+      <visual name='cp_vtail'>
+        <pose>-0.44 0 0.04 -1.57 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_htail'>
+        <pose>-0.44 0 -0.005 3.14 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_wing_left'>
+        <pose>-0.15 0.25 -0.02 0.087 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+      <visual name='cp_wing_right'>
+        <pose>-0.15 -0.25 -0.02 -0.087 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.1 0.1 0.1</scale>
+            <uri>model://mini_fixedwing_11/meshes/axes.dae</uri> </mesh>
+        </geometry>
+      </visual>
+
+    </link>
+
+    <link name='wheel_left'>
+      <inertial>
+        <mass>0.004</mass>
+        <pose>-0.105 0.035 -0.09</pose>
+        <inertia>
+          <ixx>2.27e-5</ixx>
+          <iyy>1.16e-5</iyy>
+          <izz>1.16e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/wheel_left.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <pose>-0.105 0.035 -0.09 1.57 0 0</pose>
+        <geometry>
+          <cylinder> 
+            <radius>0.0348</radius>
+            <length>0.0162</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+    </link>
+
+    <joint name='wheel_left_joint' type='revolute'>
+      <pose>-0.105 0.035 -0.09 0 0 0</pose>
+      <parent>fuselage</parent>
+      <child>wheel_left</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='wheel_right'>
+      <inertial>
+        <mass>0.004</mass>
+        <pose>-0.105 -0.035 -0.09 0 0 0</pose>
+        <inertia>
+          <ixx>2.27e-5</ixx>
+          <iyy>1.16e-5</iyy>
+          <izz>1.16e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/wheel_right.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
+      </visual>
+      <collision name='collision'>
+        <pose>-0.105 -0.035 -0.09 1.57 0 0</pose>
+        <geometry>
+          <cylinder> 
+            <radius>0.0348</radius>
+            <length>0.0162</length>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+    </link>
+
+    <joint name='wheel_right_joint' type='revolute'>
+      <pose>-0.105 -0.035 -0.09 0 0 0</pose>
+      <parent>fuselage</parent>
+      <child>wheel_right</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='rudder'>
+      <inertial>
+        <mass>0.001</mass>
+        <pose>-0.495 0 0.05</pose>
+        <inertia>
+          <ixx>2e-6</ixx>
+          <iyy>3.82e-5</iyy>
+          <izz>4.02e-5</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/rudder.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='rudder_joint' type='revolute'>
+      <pose>-0.48 0 0.05</pose>
+      <parent>fuselage</parent>
+      <child>rudder</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='elevator'>
+      <inertial>
+        <mass>0.002</mass>
+        <pose>-0.5 0 -0.005</pose>
+        <inertia>
+          <ixx>1.33e-5</ixx>
+          <iyy>1.03e-3</iyy>
+          <izz>1.05e-3</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/elevator.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='elevator_joint' type='revolute'>
+      <pose>-0.48 0 -0.005</pose>
+      <parent>fuselage</parent>
+      <child>elevator</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='aileron_left'>
+      <inertial>
+        <mass>0.003</mass>
+        <pose>-0.24 0.189 -0.03 0.087 0 0</pose>
+        <inertia>
+          <ixx>3.9e-6</ixx>
+          <iyy>3.6e-6</iyy>
+          <izz>1.07e-4</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/aileron_left.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='aileron_left_joint' type='revolute'>
+      <pose>-0.216 0.189 -0.025 0.087 0 0</pose>
+      <parent>fuselage</parent>
+      <child>aileron_left</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='aileron_right'>
+      <inertial>
+        <mass>0.003</mass>
+        <pose>-0.24 -0.189 -0.03 -0.087 0 0</pose>
+        <inertia>
+          <ixx>3.9e-6</ixx>
+          <iyy>3.6e-6</iyy>
+          <izz>1.07e-4</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/aileron_right.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/White</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='aileron_right_joint' type='revolute'>
+      <pose>-0.216 -0.189 -0.025 -0.087 0 0</pose>
+      <parent>fuselage</parent>
+      <child>aileron_right</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <dynamics>
+          <damping>0.1</damping>
+        </dynamics>
+        <limit>
+          <lower>-0.5</lower>
+          <upper>0.5</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+        </ode>
+      </physics>
+    </joint>
+
+    <link name='propeller'>
+      <inertial>
+        <mass>0.001</mass>
+        <pose>0 0 -0.02</pose>
+        <inertia>
+          <ixx>1e-6</ixx>
+          <iyy>1e-6</iyy>
+          <izz>1e-6</izz>
+        </inertia>
+      </inertial>
+      <visual name='visual'>
+        <cast_shadows>0</cast_shadows>
+        <geometry>
+          <mesh>
+            <uri>model://mini_fixedwing_10/meshes/stl/propeller.stl</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+
+    <joint name='propeller_joint' type='revolute'>
+      <pose>0 0 -0.02</pose>
+      <parent>fuselage</parent>
+      <child>propeller</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+      </axis>
+    </joint>
+
+    <plugin name="vtail" filename="libLiftDragPlugin2.so">
+      <pose>-0.44 0 0.04 -1.57 0 0</pose>
+      <cL0>0</cL0>
+      <cLa>5.61</cLa>
+      <cm0>0</cm0>
+      <cma>0</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.34</alpha_stall>
+      <cLa_stall>-12.1</cLa_stall>
+      <cma_stall>-0.434</cma_stall>
+      <area>0.05</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>rudder_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+    </plugin>
+
+    <plugin name="htail" filename="libLiftDragPlugin2.so">
+      <pose>-0.44 0 -0.005 3.14 0 0</pose>
+      <cL0>0</cL0>
+      <cLa>5.61</cLa>
+      <cm0>0</cm0>
+      <cma>0</cma>
+      <cD0>0.34</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.3</alpha_stall>
+      <cLa_stall>-12.1</cLa_stall>
+      <cma_stall>-0.434</cma_stall>
+      <area>0.05</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>elevator_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+    </plugin>
+
+    <plugin name="wing_left" filename="libLiftDragPlugin2.so">
+      <pose>-0.15 0.25 -0.02 0.087 0 0</pose>
+      <cL0>0.25</cL0>
+      <cLa>5.289</cLa>
+      <!--check cm0-->
+      <cm0>0.01</cm0>
+      <cma>-0.286</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.18</alpha_stall>
+      <cLa_stall>-5.95</cLa_stall>
+      <cma_stall>-0.67</cma_stall>
+      <area>0.0707</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>aileron_left_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+      <verbose>0</verbose>
+    </plugin>
+
+    <plugin name="wing_right" filename="libLiftDragPlugin2.so">
+      <pose>-0.15 -0.25 -0.02 -0.087 0 0</pose>
+      <cL0>0.25</cL0>
+      <cLa>5.289</cLa>
+      <!--check cm0-->
+      <cm0>0.01</cm0>
+      <cma>-0.286</cma>
+      <cD0>0.03</cD0>
+      <kcDcL>0.1</kcDcL>
+      <alpha_stall>0.18</alpha_stall>
+      <cLa_stall>-5.95</cLa_stall>
+      <cma_stall>-0.67</cma_stall>
+      <area>0.0707</area>
+      <air_density>1.2041</air_density>
+      <link_name>fuselage</link_name>
+      <control_joint_name>aileron_right_joint</control_joint_name>
+      <control_joint_rad_to_cL>1.0</control_joint_rad_to_cL>
+      <control_joint_rad_to_cm>-0.25</control_joint_rad_to_cm>
+      <verbose>0</verbose>
+    </plugin>
+
+    <!--Start PX4 autopilot-->
+
+    <link name='imu_link'>
+      <pose>-0.144 0 -0.02 0 0 0</pose>
+      <inertial>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>1e-05</ixx>
+          <iyy>1e-05</iyy>
+          <izz>1e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <joint name='imu_joint' type='revolute'>
+      <child>imu_link</child>
+      <parent>fuselage</parent>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+
+    <plugin name='gazebo_imu_plugin' filename='libgazebo_imu_plugin.so'>
+      <robotNamespace></robotNamespace>
+      <linkName>imu_link</linkName>
+      <imuTopic>/imu</imuTopic>
+      <gyroscopeNoiseDensity>0.0003394</gyroscopeNoiseDensity>
+      <gyroscopeRandomWalk>3.8785e-05</gyroscopeRandomWalk>
+      <gyroscopeBiasCorrelationTime>1000.0</gyroscopeBiasCorrelationTime>
+      <gyroscopeTurnOnBiasSigma>0.0087</gyroscopeTurnOnBiasSigma>
+      <accelerometerNoiseDensity>0.004</accelerometerNoiseDensity>
+      <accelerometerRandomWalk>0.006</accelerometerRandomWalk>
+      <accelerometerBiasCorrelationTime>300.0</accelerometerBiasCorrelationTime>
+      <accelerometerTurnOnBiasSigma>0.196</accelerometerTurnOnBiasSigma>
+    </plugin>
+
+    <plugin name="gps_plugin" filename="libgazebo_gps_plugin.so">
+        <robotNamespace></robotNamespace>
+        <gpsNoise>true</gpsNoise>
+    </plugin>
+
+    <plugin name='magnetometer_plugin' filename='libgazebo_magnetometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>100</pubRate>
+      <noiseDensity>0.0004</noiseDensity>
+      <randomWalk>6.4e-06</randomWalk>
+      <biasCorrelationTime>600</biasCorrelationTime>
+      <magTopic>/mag</magTopic>
+    </plugin>
+
+    <plugin name='barometer_plugin' filename='libgazebo_barometer_plugin.so'>
+      <robotNamespace/>
+      <pubRate>50</pubRate>
+      <baroTopic>/baro</baroTopic>
+    </plugin>
+
+    <plugin name='motor_plugin' filename='libMotorPlugin.so'>
+      <gztopic>/throttle1</gztopic>
+      <joint_name>propeller_joint</joint_name>
+      <prop_name>propeller</prop_name>
+      <diameter>5</diameter>
+      <ct>0.1025  -0.0258 0.2714  -0.6997 0.359</ct>
+      <cp>0.0537  0.0096  0.2053  -0.4276 0.1702</cp>
+      <kV>2280</kV>
+      <i0>0.5</i0>
+      <iMax>30</iMax>
+      <r0>0.2</r0>
+      <battV>11.1</battV>
+      <capacity>850</capacity>
+      <axis_num>0</axis_num>
+      <!--Seems to lacking thrust, being optimisticabout motor eff.-->
+      <!--<motor_eff>0.7</motor_eff>-->
+      <motor_eff>0.9</motor_eff>
+      <verbose>1</verbose>
+    </plugin>
+
+    <plugin name='mavlink_interface' filename='libgazebo_mavlink_interface.so'>
+      <robotNamespace></robotNamespace>
+      <imuSubTopic>/imu</imuSubTopic>
+      <gpsSubTopic>/gps</gpsSubTopic>
+      <magSubTopic>/mag</magSubTopic>
+      <baroSubTopic>/baro</baroSubTopic>
+      <mavlink_addr>INADDR_ANY</mavlink_addr>
+      <mavlink_udp_port>14560</mavlink_udp_port>
+      <serialEnabled>false</serialEnabled>
+      <serialDevice>/dev/ttyACM0</serialDevice>
+      <baudRate>921600</baudRate>
+      <qgc_addr>INADDR_ANY</qgc_addr>
+      <qgc_udp_port>14550</qgc_udp_port>
+      <sdk_addr>INADDR_ANY</sdk_addr>
+      <sdk_udp_port>14540</sdk_udp_port>
+      <hil_mode>false</hil_mode>
+      <hil_state_level>false</hil_state_level>
+      <enable_lockstep>true</enable_lockstep>
+      <use_tcp>true</use_tcp>
+      <motorSpeedCommandPubTopic>/gazebo/command/motor_speed</motorSpeedCommandPubTopic>
+      <control_channels>
+        <channel name="rudder">
+          <input_index>2</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>rudder_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name="puller">
+          <input_index>4</input_index>
+          <!--Needs a lot of throttle-->
+          <input_offset>0.3</input_offset>
+          <input_scaling>1</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position_gztopic</joint_control_type>
+          <gztopic>/throttle1</gztopic>
+          <joint_name>propeller_joint</joint_name>
+        </channel>
+        <channel name="aileron_left">
+          <input_index>5</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>-0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>aileron_left_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name="aileron_right">
+          <input_index>6</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>-0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>aileron_right_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+        <channel name="elevator">
+          <input_index>7</input_index>
+          <input_offset>0</input_offset>
+          <input_scaling>0.28</input_scaling>
+          <zero_position_disarmed>0</zero_position_disarmed>
+          <zero_position_armed>0</zero_position_armed>
+          <joint_control_type>position</joint_control_type>
+          <joint_name>elevator_joint</joint_name>
+          <joint_control_pid>
+            <p>10</p>
+            <i>0</i>
+            <d>0</d>
+            <iMax>0</iMax>
+            <iMin>0</iMin>
+            <cmdMax>0.28</cmdMax>
+            <cmdMin>-0.28</cmdMin>
+          </joint_control_pid>
+        </channel>
+      </control_channels>
+
+    </plugin>
+  </model>
+
+</sdf>
+
+<!-- vim: set et fenc=utf-8 ft=xml ff=unix sts=0 sw=2 ts=2 : -->
