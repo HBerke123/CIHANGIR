@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0" version="26.0.16">
+  <diagram name="Sayfa -1" id="yfLW-VugRBDgH6hGD0F2">
+    <mxGraphModel dx="1909" dy="1029" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fFdb8lj0eYezfeGpytW5-92" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-93" target="fFdb8lj0eYezfeGpytW5-95">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-93" value="Başlangıç" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-94" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-95" target="fFdb8lj0eYezfeGpytW5-97">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-95" value="İHA&#39;nın modunu AUTO&#39;ya ayarla" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-97" target="fFdb8lj0eYezfeGpytW5-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-97" value="Motorları başlat" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-99" target="fFdb8lj0eYezfeGpytW5-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-99" value="İlk rota için varış noktalarını bul" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-100" value="Hayır" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-102" target="fFdb8lj0eYezfeGpytW5-104">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="810" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-101" value="Evet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-102" target="fFdb8lj0eYezfeGpytW5-113">
+          <mxGeometry x="-0.0833" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-102" value="&lt;div&gt;Son varış&amp;nbsp;&lt;/div&gt;&lt;div&gt;noktasına ulaşıldı mı?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="340" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-104" target="fFdb8lj0eYezfeGpytW5-102">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-104" value="1 saniye bekle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-105" value="Hayır" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-107" target="fFdb8lj0eYezfeGpytW5-109">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-106" value="Evet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-107" target="fFdb8lj0eYezfeGpytW5-111">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="355" y="-130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-107" value="&lt;div&gt;İlk atış bölgesine &lt;br&gt;&lt;/div&gt;&lt;div&gt;varıldı mı?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="105" width="130" height="125" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-109" target="fFdb8lj0eYezfeGpytW5-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-109" value="1 saniye bekle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-111" target="fFdb8lj0eYezfeGpytW5-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-111" value="İlk yükü bırak" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="345" y="20" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-113" target="fFdb8lj0eYezfeGpytW5-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-113" value="İkinci rota için varış noktalarını bul" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-114" value="Hayır" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-116" target="fFdb8lj0eYezfeGpytW5-118">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="740" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-115" value="Evet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-116" target="fFdb8lj0eYezfeGpytW5-128">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-116" value="&lt;div&gt;İkinci atış bölgesine&lt;/div&gt;&lt;div&gt;varıldı mı?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="100" width="130" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-118" target="fFdb8lj0eYezfeGpytW5-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-118" value="1 saniye bekle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="720" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-119" value="Hayır" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-121" target="fFdb8lj0eYezfeGpytW5-123">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="430" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-120" value="Evet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-121" target="fFdb8lj0eYezfeGpytW5-125">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-121" value="&lt;div&gt;Son varış noktasına&lt;/div&gt;&lt;div&gt;varıldı mı?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="504" y="340" width="150" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-122" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-123" target="fFdb8lj0eYezfeGpytW5-121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-123" value="1 saniye bekle" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-124" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-125" target="fFdb8lj0eYezfeGpytW5-126">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-125" value="İHA&#39;nın modunu RTL&#39;ye ayarla" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="654" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-126" value="Bitiş" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="654" y="595" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="fFdb8lj0eYezfeGpytW5-128" target="fFdb8lj0eYezfeGpytW5-121">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fFdb8lj0eYezfeGpytW5-128" value="İkinci yükü bırak" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="519" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
