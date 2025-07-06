@@ -35,6 +35,8 @@ def startmission(p1, p2, a1, a2, radius = 60, angle = 1, distance = 1):
     point(x3, y3)
     point(x4, y4)
 
+    arr_nextwaypoint((x1 + cos(alpha * r) * radius, y1 + sin(alpha * r) * radius), (x2 + cos((alpha + 90) % 360 * r) * radius, y2 + sin((alpha + 90) % 360 * r) * radius), (alpha + 90) % 360, angle, distance)
+
     while True:
         if last == 0:
             corx = x1 + cos(alpha * r) * radius
@@ -208,3 +210,33 @@ def startmission(p1, p2, a1, a2, radius = 60, angle = 1, distance = 1):
 
         cords.append((corx, cory))
         point(corx, cory)
+
+def arr_nextwaypoint(start, end, delta, angle, distance):
+    cords = []
+    alpha = delta
+    startx = start[0]
+    starty = start[1]
+    while True:
+        odistx = startx - end[0]
+        odisty = starty - end[1]
+        oalpha = atan(odisty / odistx) * d
+
+        if (abs(alpha - oalpha) < angle + 1):
+            cords.append((end[0], end[1]))
+            point(end[0], end[1])
+            break
+
+        alpha1 = (oalpha - alpha) % 360
+        alpha2 = 360 - alpha1
+
+        if (alpha1 < alpha2):
+            alpha = (alpha + angle) % 360
+        else:
+            alpha = (alpha - angle) % 360
+
+        startx = startx + cos(alpha * r) * distance
+        starty = starty + sin(alpha * r) * distance
+        
+        cords.append((startx, starty))
+        point(startx, starty)
+        print(odistx, odisty, oalpha, alpha1, alpha2, angle + 1)
